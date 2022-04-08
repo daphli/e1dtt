@@ -1,60 +1,76 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap');
 
-* {
+:root {
+    --clr-primary: #000000;
+    --clr-accent: ;
+    --clr-mark: ;
+
+    --ff-text: Exo;
+
+    --nav-gap: 2rem;
+}
+
+*,
+::before,
+::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Exo;
+}
+
+html {
+    color: var(--clr-primary);
+    font-family: var(--ff-text);
 }
 
 body {
-    background: #ffffff;
     overflow: hidden;
 }
 
-h1 {
-    color: rgb(0, 0, 0);
-    font-weight: 300;
-    background: rgba(255, 0, 0, 0);
-    z-index: 1;
+.hidden {
+    display: none;
 }
 
-#container {
+/* Navigation */
+
+#nav {
+    text-align: center;
+    margin: 0px 30px 0px 30px;
+    height: 600px;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
 }
 
-.highlight {
-    color:rgb(86, 187, 162);
+#nav #nav-countdown {
+    position: absolute;
+    top: 25%;
+    transform: translate(0, -50%);
 }
 
-#canvas {
-    position: relative;
-    width: 740px;
-    min-width: 740px;
-    height: 640px;
-    min-height: 640px;
-    border: 1px solid rgba(129, 123, 123, 0.5);
-    background: rgba(0, 0, 0, 0);
-    border-radius: 15px;
-    cursor: crosshair;
+#nav #nav-stats {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
 }
 
-.active {
-    color:rgb(86, 187, 162) !important;
-    background:rgba(220, 220, 220, 0.1);
+#nav #nav-info {
+    position: absolute;
+    top: 75%;
+    transform: translate(0, -50%);
 }
 
-.tool {
-    color: rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-    margin-left: 50px;
+#menu {
+    position: fixed;
+    z-index: 30;
+    top: 15px;
+    right: 15px;
+    height: 25px;
+    width: 45px;
+    margin: auto;
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
 }
 
-.tool:hover {
-    color:rgba(0, 0, 0, 1.0);
+.nav-item:active {
+    background-color: rgb(170, 201, 201);
 }
