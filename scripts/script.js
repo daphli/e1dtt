@@ -6,7 +6,7 @@ let menu = document.getElementById("menu");
 let secCountdown = document.getElementById("sec-countdown");
 let secStats = document.getElementById('sec-stats');
 let secInfo = document.getElementById('sec-info');
-let leaderboard = document.getElementById('leaderBoard');
+let leaderboard = document.getElementById('leaderboard');
 let table_headers = ["Rang", "Name", "Score(DULI)", "Tournierteilnahmen", "Tourniersiege", "Gespielte Legs", "Gewonnene Legs", "Einnahmen", "Tournierpunkte", "180er"];
 const _tt1 = {
     p0: {player: "Jonas Dunker", duli: 94.29, win: false, legs_played: 10, legs_won: 7, earnings: 5.0, rank: 2, $180s: 0},
