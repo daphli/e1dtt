@@ -24,7 +24,7 @@ html {
 }
 
 body {
-    overflow: hidden;
+    overflow: scroll;
 }
 
 .hidden {
@@ -76,26 +76,30 @@ body {
 }
 
 .collapsible {
-    background-color: rgb(255, 255, 255);
-    color: #444;
+    background-color: #ffffff;
+    font-family: var(--ff-text);
+    color: rgb(0, 0, 0);
     cursor: pointer;
-    padding: 18px;
+    padding: 18px 36px;
     width: 100%;
     border: none;
     text-align: left;
     outline: none;
     font-size: 18px;
+    transition: color 0.25s ease-out, padding 0.25s ease-out, font-weight 0.1s ease-in;
 }
 
-.active, .collapsible:hover {
-    background-color: rgb(255, 255, 255);
+.active {
+    background-image: linear-gradient(#f0f0f0, #eeeeee);
+    padding: 32px 0px 4px 108px;
+    font-weight: 500;
 }
 
 .content {
     padding: 20px 18px;
     display: none;
     overflow: hidden;
-    background-color: #f1f1f1;
+    background-image: linear-gradient(#eeeeee, #ffffff);
     width: 100%;
 }
 
