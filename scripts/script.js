@@ -39,6 +39,8 @@ const _tournaments = [
     //_tt2 ...
 ];
 
+calculatePlayerData();
+
 navCountdown.addEventListener("click", displayCountdown);
 navStats.addEventListener('click', displayStats);
 navInfo.addEventListener('click', displayInfo);
@@ -93,8 +95,8 @@ function openNav() {
 /* stats */
 
 function calculateStats() {
-    calculatePlayerData();
-    calculateDULI();
+    //calculatePlayerData();
+    //calculateDULI();
 }
 
 function calculatePlayerData() {
@@ -120,6 +122,7 @@ function calculatePlayerData() {
         }
     }
     console.log(players);
+    calculateDULI();
 }
 
 function calculateDULI() {
@@ -201,15 +204,89 @@ function sort$180s(a, b) {
 }
 
 duliCollapsible.addEventListener("click", function() {
-    players.sort((a, b) => b.duli - a.duli);
-    document.getElementById('stats-duli').innerHTML = "";
-    let i;
-    for (i = 0; i < players.length; i++) {
-        document.getElementById('stats-duli').innerHTML += "<b>" + (i + 1) + ". </b>" + players[i].name + " (" + players[i].duli + ")</br>";
+    if (duliCollapsible.classList.contains("active")) {
+        players.sort((a, b) => b.duli - a.duli);
+        document.getElementById('stats-duli').innerHTML = "";
+        let i;
+        for (i = 0; i < players.length; i++) {
+            if (i !== 0 && i % 4 === 0) {
+                document.getElementById('stats-duli').innerHTML += "<hr>";
+            }
+            document.getElementById('stats-duli').innerHTML += "<b>" + (i + 1) + ". </b>" + players[i].name + "<span>(" + players[i].duli + ")</span></br>";
+        }
     }
-    
 });
 
 tournamentsCollapsible.addEventListener("click", function() {
-    players.sort((a, b) => b.tournaments_won - a.tournaments_won);
+    if (!tournamentsCollapsible.classList.contains("active)")) {
+        players.sort((a, b) => b.duli - a.duli);
+        players.sort((a, b) => b.tournaments_won - a.tournaments_won);
+        document.getElementById('stats-tournaments').innerHTML = "";
+        let i;
+        for (i = 0; i < players.length; i++) {
+            if (i !== 0 && i % 4 === 0) {
+                document.getElementById('stats-tournaments').innerHTML += "<hr>";
+            }
+            document.getElementById('stats-tournaments').innerHTML += "<b>" + (i + 1) + ". </b>" + players[i].name + "<span>(" + players[i].tournaments_won + "/" + players[i].tournaments + ")</span></br>";
+        }
+    }
+});
+
+legsCollapsible.addEventListener("click", function() {
+    if (!legsCollapsible.classList.contains("active)")) {
+        players.sort((a, b) => b.duli - a.duli);
+        players.sort((a, b) => b.legs_won - a.legs_won);
+        document.getElementById('stats-legs').innerHTML = "";
+        let i;
+        for (i = 0; i < players.length; i++) {
+            if (i !== 0 && i % 4 === 0) {
+                document.getElementById('stats-legs').innerHTML += "<hr>";
+            }
+            document.getElementById('stats-legs').innerHTML += "<b>" + (i + 1) + ". </b>" + players[i].name + "<span>(" + players[i].legs_won + "/" + players[i].legs + ")</span></br>";
+        }
+    }
+});
+
+earningsCollapsible.addEventListener("click", function() {
+    if (!earningsCollapsible.classList.contains("active)")) {
+        players.sort((a, b) => b.duli - a.duli);
+        players.sort((a, b) => b.earnings - a.earnings);
+        document.getElementById('stats-earnings').innerHTML = "";
+        let i;
+        for (i = 0; i < players.length; i++) {
+            if (i !== 0 && i % 4 === 0) {
+                document.getElementById('stats-earnings').innerHTML += "<hr>";
+            }
+            document.getElementById('stats-earnings').innerHTML += "<b>" + (i + 1) + ". </b>" + players[i].name + "<span>(" + players[i].earnings + ",- €)</span></br>";
+        }
+    }
+});
+
+pointsCollapsible.addEventListener("click", function() {
+    if (!pointsCollapsible.classList.contains("active)")) {
+        players.sort((a, b) => b.duli - a.duli);
+        players.sort((a, b) => b.points - a.points);
+        document.getElementById('stats-points').innerHTML = "";
+        let i;
+        for (i = 0; i < players.length; i++) {
+            if (i !== 0 && i % 4 === 0) {
+                document.getElementById('stats-points').innerHTML += "<hr>";
+            }
+            document.getElementById('stats-points').innerHTML += "<b>" + (i + 1) + ". </b>" + players[i].name + "<span>(" + players[i].points + " Pkt. )</span></br>";
+        }
+    }
+});
+
+$180sCollapsible.addEventListener("click", function() {
+    if (!$180sCollapsible.classList.contains("active)")) {
+        players.sort((a, b) => b.duli - a.duli);
+        players.sort((a, b) => b.$180s - a.$180s);
+        document.getElementById('stats-180').innerHTML = "";
+        let i;
+        for (i = 0; i < players.length; i++) {
+            if (players[i].$180s > 0) {
+                document.getElementById('stats-180').innerHTML += "<b>" + (i + 1) + ". </b>" + players[i].name + "<span>(" + players[i].$180s + ")</span></br>";
+            }
+        }
+    }
 });
