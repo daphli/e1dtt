@@ -2,8 +2,11 @@
 
 :root {
     --clr-primary: #000000;
-    --clr-accent: ;
-    --clr-mark: ;
+    --clr-secondary: #ffffff;
+    --clr-gradient1: #f0f0f0;
+    --clr-gradient2: #eeeeee;
+    --clr-gradient3: #2f2f2f;
+    --clr-gradient4: #3f3f3f;
 
     --ff-text: Exo;
 
@@ -19,12 +22,20 @@
 }
 
 html {
-    color: var(--clr-primary);
     font-family: var(--ff-text);
 }
 
 body {
     overflow: scroll;
+    color: var(--clr-primary);
+    background-color: var(--clr-secondary);
+}
+
+body.dark {
+    --clr-secondary: #000000;
+    --clr-primary: #e0e0e0;
+    --clr-gradient1: var(--clr-gradient3);
+    --clr-gradient2: var(--clr-gradient4);
 }
 
 .hidden {
@@ -36,26 +47,39 @@ body {
 #nav {
     text-align: center;
     margin: 0px 30px 0px 30px;
-    height: 600px;
+    height: 100vh;
     position: relative;
 }
 
 #nav #nav-countdown {
     position: absolute;
-    top: 25%;
+    top: 20%;
     transform: translate(0, -50%);
 }
 
 #nav #nav-stats {
     position: absolute;
-    top: 50%;
+    top: 40%;
     transform: translate(0, -50%);
 }
 
 #nav #nav-info {
     position: absolute;
-    top: 75%;
+    top: 60%;
     transform: translate(0, -50%);
+}
+
+#nav #nav-theme {
+    position: absolute;
+    top: 80%;
+    transform: translate(0, -50%);
+    width: 100%;
+}
+
+#light-switch {
+    height: 76px;
+    padding: 20px;
+    fill: var(--clr-primary);
 }
 
 #menu {
@@ -63,12 +87,13 @@ body {
     z-index: 30;
     top: 15px;
     right: 15px;
-    height: 25px;
-    width: 45px;
+    height: 23px;
+    width: 50px;
     margin: auto;
-    background-color: #000000;
-    color: #ffffff;
+    background-color: var(--clr-primary);
+    color: var(--clr-secondary);
     text-align: center;
+    border-radius: 5px;
 }
 
 .nav-item:active {
@@ -76,9 +101,9 @@ body {
 }
 
 .collapsible {
-    background-color: #ffffff;
+    background-color: var(--clr-secondary);
     font-family: var(--ff-text);
-    color: rgb(0, 0, 0);
+    color: var(--clr-primary);
     cursor: pointer;
     padding: 18px 36px;
     width: 100%;
@@ -90,7 +115,7 @@ body {
 }
 
 .active {
-    background-image: linear-gradient(#f0f0f0, #eeeeee);
+    background-image: linear-gradient(var(--clr-gradient2), var(--clr-gradient1));
     padding: 32px 0px 4px 108px;
     font-weight: 500;
 }
@@ -99,7 +124,7 @@ body {
     padding: 20px 18px;
     display: none;
     overflow: hidden;
-    background-image: linear-gradient(#eeeeee, #ffffff);
+    background-image: linear-gradient(var(--clr-gradient1), var(--clr-secondary));
     width: 100%;
 }
 
