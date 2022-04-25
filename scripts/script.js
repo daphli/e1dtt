@@ -90,6 +90,36 @@ function displayInfo() {
 
 function toggleTheme() {
     document.body.classList.toggle("dark");
+    let myDoc = document.documentElement;
+    if (document.body.classList.contains("dark")) {
+        if (myDoc.requestFullscreen) {
+            myDoc.requestFullscreen();
+        }
+        else if (myDoc.msRequestFullscreen) {
+            myDoc.msRequestFullscreen();
+        }
+        else if (myDoc.mozRequestFullscreen) {
+            myDoc.mozRequestFullscreen();
+        }
+        else if (myDoc.webkitRequestFullscreen) {
+            myDoc.webkitRequestFullscreen();
+        }
+    }
+    else {
+        //document.exitFullscreen();
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        }
+        else if (document.msexitFullscreen) {
+            document.msexitFullscreen();
+        }
+        else if (document.mozexitFullscreen) {
+            document.mozexitFullscreen();
+        }
+        else if (document.webkitexitFullscreen) {
+            document.webkitexitFullscreen();
+        }
+    }
 }
 
 function openNav() {
