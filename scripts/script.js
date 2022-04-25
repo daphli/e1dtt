@@ -2,6 +2,7 @@ let nav = document.getElementById("nav");
 let navCountdown = document.getElementById("nav-countdown");
 let navStats = document.getElementById('nav-stats');
 let navInfo = document.getElementById('nav-info');
+let lightSwitch = document.getElementById('light-switch');
 let menu = document.getElementById("menu");
 let secCountdown = document.getElementById("sec-countdown");
 let secStats = document.getElementById('sec-stats');
@@ -44,6 +45,7 @@ calculatePlayerData();
 navCountdown.addEventListener("click", displayCountdown);
 navStats.addEventListener('click', displayStats);
 navInfo.addEventListener('click', displayInfo);
+lightSwitch.addEventListener('click', toggleTheme);
 menu.addEventListener('click', openNav);
 
 let collapsibles = document.getElementsByClassName("collapsible");
@@ -61,27 +63,33 @@ for (i = 0; i < collapsibles.length; i++) {
   });
 }
 
-
-
 function displayCountdown() {
     secCountdown.classList.remove("hidden");
     nav.classList.add("hidden");
     menu.classList.remove('hidden');
-    //jonas code
+    /*
+
+    JONAS
+
+    CODE
+
+    */
 }
 
 function displayStats() {
     secStats.classList.remove('hidden');
     nav.classList.add('hidden');
     menu.classList.remove('hidden');
-    //reloads everytime a user chooses stats in navigation
-    calculateStats();
 }
 
 function displayInfo() {
     secInfo.classList.remove('hidden');
     nav.classList.add('hidden');
     menu.classList.remove('hidden');
+}
+
+function toggleTheme() {
+    document.body.classList.toggle("dark");
 }
 
 function openNav() {
@@ -93,11 +101,6 @@ function openNav() {
 }
 
 /* stats */
-
-function calculateStats() {
-    //calculatePlayerData();
-    //calculateDULI();
-}
 
 function calculatePlayerData() {
     if (_tournaments.length === 0) {
