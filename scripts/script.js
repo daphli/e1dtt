@@ -3,6 +3,8 @@ let navCountdown = document.getElementById("nav-countdown");
 let navStats = document.getElementById('nav-stats');
 let navInfo = document.getElementById('nav-info');
 let lightSwitch = document.getElementById('light-switch');
+let fullscreen = document.getElementById('fullscreen');
+let isFullscreen = false;
 let menu = document.getElementById("menu");
 let secCountdown = document.getElementById("sec-countdown");
 let secStats = document.getElementById('sec-stats');
@@ -46,6 +48,7 @@ navCountdown.addEventListener("click", displayCountdown);
 navStats.addEventListener('click', displayStats);
 navInfo.addEventListener('click', displayInfo);
 lightSwitch.addEventListener('click', toggleTheme);
+fullscreen.addEventListener('click', toggleFullscreen);
 menu.addEventListener('click', openNav);
 
 let collapsibles = document.getElementsByClassName("collapsible");
@@ -90,8 +93,11 @@ function displayInfo() {
 
 function toggleTheme() {
     document.body.classList.toggle("dark");
+}
+
+function toggleFullscreen() {
     let myDoc = document.documentElement;
-    if (document.body.classList.contains("dark")) {
+    if (!isFullscreen) {
         if (myDoc.requestFullscreen) {
             myDoc.requestFullscreen();
         }
@@ -106,7 +112,6 @@ function toggleTheme() {
         }
     }
     else {
-        //document.exitFullscreen();
         if (document.exitFullscreen) {
             document.exitFullscreen();
         }
@@ -120,6 +125,7 @@ function toggleTheme() {
             document.webkitexitFullscreen();
         }
     }
+    isFullscreen = !isFullscreen;
 }
 
 function openNav() {
