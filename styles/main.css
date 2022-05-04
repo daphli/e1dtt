@@ -85,11 +85,15 @@ body.dark {
     height: 76px;
     padding: 20px;
     fill: var(--clr-primary);
+    transition-property: all;
+    transition-duration: 0.6s;
 }
 
 #fullscreen {
     height: 76px;
     fill: var(--clr-primary);
+    transition-property: all;
+    transition-duration: 0.6s;
 }
 
 #menu {
@@ -104,6 +108,71 @@ body.dark {
     color: var(--clr-secondary);
     text-align: center;
     border-radius: 5px;
+}
+
+#countdown {
+    /*font-size: 4rem;
+    text-align: center;*/
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template: "noth noth" "days days-description" "hours hours-description" "minutes minutes-description" "seconds seconds-description";
+}
+
+#countdown-days {
+    text-align: right;
+    font-size: 4rem;
+    grid-area: days;
+    min-width: 50vw;
+}
+
+#countdown-hours {
+    text-align: right;
+    font-size: 4rem;
+    grid-area: hours;
+    min-width: 50vw;
+}
+
+#countdown-minutes {
+    text-align: right;
+    font-size: 4rem;
+    grid-area: minutes;
+    min-width: 50vw;
+}
+
+#countdown-seconds {
+    text-align: right;
+    font-size: 4rem;
+    grid-area: seconds;
+    min-width: 50vw;
+}
+
+#cdd {
+    text-align: left;
+    font-size: 1.2rem;
+    grid-area: days-description;
+    min-width: 50vw;
+}
+
+#cdh {
+    text-align: left;
+    font-size: 1.2rem;
+    grid-area: hours-description;
+    min-width: 50vw;
+}
+
+#cdm {
+    text-align: left;
+    font-size: 1.2rem;
+    grid-area: minutes-description;
+    min-width: 50vw;
+}
+
+#cds {
+    text-align: left;
+    font-size: 1.2rem;
+    grid-area: seconds-description;
+    min-width: 50vw;
 }
 
 .extra {
@@ -138,7 +207,12 @@ body.dark {
     width: 100%;
 }
 
-span {
+.span-rank {
     position: absolute;
     right: 80px;
+}
+
+.countdown-description {
+    transform: translate(0, 18%);
+    padding-left: 10px;
 }
