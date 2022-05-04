@@ -41,6 +41,7 @@ const _tournaments = [
     _tt1,
     //_tt2 ...
 ];
+let nextAppointment = new Date("Jun 12, 2022 16:00:00").getTime();
 
 calculatePlayerData();
 
@@ -70,6 +71,8 @@ function displayCountdown() {
     secCountdown.classList.remove("hidden");
     nav.classList.add("hidden");
     menu.classList.remove('hidden');
+
+    runTimer();
     /*
 
     JONAS
@@ -251,7 +254,7 @@ duliCollapsible.addEventListener("click", function() {
             if (i !== 0 && i % 4 === 0) {
                 document.getElementById('stats-duli').innerHTML += "<hr>";
             }
-            document.getElementById('stats-duli').innerHTML += "<b>" + (i + 1) + ". </b>" + players[i].name + "<span>(" + players[i].duli + ")</span></br>";
+            document.getElementById('stats-duli').innerHTML += "<b>" + (i + 1) + ". </b>" + players[i].name + "<span class='span-rank'>(" + players[i].duli + ")</span></br>";
         }
     }
 });
@@ -266,7 +269,7 @@ tournamentsCollapsible.addEventListener("click", function() {
             if (i !== 0 && i % 4 === 0) {
                 document.getElementById('stats-tournaments').innerHTML += "<hr>";
             }
-            document.getElementById('stats-tournaments').innerHTML += "<b>" + (i + 1) + ". </b>" + players[i].name + "<span>(" + players[i].tournaments_won + "/" + players[i].tournaments + ")</span></br>";
+            document.getElementById('stats-tournaments').innerHTML += "<b>" + (i + 1) + ". </b>" + players[i].name + "<span class='span-rank'>(" + players[i].tournaments_won + "/" + players[i].tournaments + ")</span></br>";
         }
     }
 });
@@ -281,7 +284,7 @@ legsCollapsible.addEventListener("click", function() {
             if (i !== 0 && i % 4 === 0) {
                 document.getElementById('stats-legs').innerHTML += "<hr>";
             }
-            document.getElementById('stats-legs').innerHTML += "<b>" + (i + 1) + ". </b>" + players[i].name + "<span>(" + players[i].legs_won + "/" + players[i].legs + ")</span></br>";
+            document.getElementById('stats-legs').innerHTML += "<b>" + (i + 1) + ". </b>" + players[i].name + "<span class='span-rank'>(" + players[i].legs_won + "/" + players[i].legs + ")</span></br>";
         }
     }
 });
@@ -296,7 +299,7 @@ earningsCollapsible.addEventListener("click", function() {
             if (i !== 0 && i % 4 === 0) {
                 document.getElementById('stats-earnings').innerHTML += "<hr>";
             }
-            document.getElementById('stats-earnings').innerHTML += "<b>" + (i + 1) + ". </b>" + players[i].name + "<span>(" + players[i].earnings + ",- €)</span></br>";
+            document.getElementById('stats-earnings').innerHTML += "<b>" + (i + 1) + ". </b>" + players[i].name + "<span class='span-rank'>(" + players[i].earnings + ",- €)</span></br>";
         }
     }
 });
@@ -311,7 +314,7 @@ pointsCollapsible.addEventListener("click", function() {
             if (i !== 0 && i % 4 === 0) {
                 document.getElementById('stats-points').innerHTML += "<hr>";
             }
-            document.getElementById('stats-points').innerHTML += "<b>" + (i + 1) + ". </b>" + players[i].name + "<span>(" + players[i].points + " Pkt. )</span></br>";
+            document.getElementById('stats-points').innerHTML += "<b>" + (i + 1) + ". </b>" + players[i].name + "<span class='span-rank'>(" + players[i].points + " Pkt. )</span></br>";
         }
     }
 });
@@ -324,8 +327,31 @@ $180sCollapsible.addEventListener("click", function() {
         let i;
         for (i = 0; i < players.length; i++) {
             if (players[i].$180s > 0) {
-                document.getElementById('stats-180').innerHTML += "<b>" + (i + 1) + ". </b>" + players[i].name + "<span>(" + players[i].$180s + ")</span></br>";
+                document.getElementById('stats-180').innerHTML += "<b>" + (i + 1) + ". </b>" + players[i].name + "<span class='span-rank'>(" + players[i].$180s + ")</span></br>";
             }
         }
     }
 });
+
+/* Countdown */
+
+function runTimer() {
+    var TimerFunction = setInterval(function() {
+        if (secCountdown.classList.contains("hidden")) {
+            clearInterval(TimerFunction);
+        }
+        else {
+            let now = new Date().getTime();
+            let difference = nextAppointment - now;
+            let days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            let hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            let seconds = Math.floor((difference % (1000 * 60)) / 1000);
+            document.getElementById('countdown').innerHTML = "<div id='countdown-days'>" + days + "</div><span class='countdown-description' id='cdd'>Days</span>";
+            document.getElementById('countdown').innerHTML += "<div id='countdown-hours'>" + hours + "</div><span class='countdown-description' id='cdh'>Hours</span>";
+            document.getElementById('countdown').innerHTML += "<div id='countdown-minutes'>" + minutes + "</div><span class='countdown-description' id='cdm'>Minutes</span>";
+            document.getElementById('countdown').innerHTML += "<div id='countdown-seconds'>" + seconds + "</div><span class='countdown-description' id='cds'>Seconds</span>";
+        }
+        //console.log("TIME LEFT: " + days + " days, " + hours + " hours and " + minutes + " minutes.");
+    }, 1000)
+}
