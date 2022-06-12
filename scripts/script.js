@@ -25,6 +25,7 @@ let players = [
     {name: "Luca Schenkel", duli: 0.0, tournaments: 0, tournaments_won: 0, legs: 0, legs_won: 0, earnings: 0.0, points: 0, $180s: 0},
     {name: "Jan Hübner", duli: 0.0, tournaments: 0, tournaments_won: 0, legs: 0, legs_won: 0, earnings: 0.0, points: 0, $180s: 0},
     {name: "Lucas Huber", duli: 0.0, tournaments: 0, tournaments_won: 0, legs: 0, legs_won: 0, earnings: 0.0, points: 0, $180s: 0},
+    {name: "Simon Lieske", duli: 0.0, tournaments: 0, tournaments_won: 0, legs: 0, legs_won: 0, earnings: 0.0, points: 0, $180s: 0},
 ];
 const _tt1 = [
     {player: "Jonas Dunker", duli: 94.29, win: false, legs_played: 10, legs_won: 7, earnings: 5.0, rank: 2, $180s: 0},
@@ -36,9 +37,18 @@ const _tt1 = [
     {player: "Jan Hübner", duli: 154.3, win: false, legs_played: 10, legs_won: 3, earnings: 0.0, rank: 3, $180s: 0},
     {player: "Lucas Huber", duli: 97.14, win: false, legs_played: 10, legs_won: 3, earnings: 0.0, rank: 3, $180s: 0},
 ];
+const _tt2 = [
+    {player: "Jonas Dunker", duli: 120.0, win: false, legs_played: 12, legs_won: 5, earnings: 0.0, rank: 3, $180s: 0},
+    {player: "Simon Heß", duli: 200.0, win: true, legs_played: 12, legs_won: 9, earnings: 5.0, rank: 2, $180s: 0},
+    {player: "Daniel Lieske", duli: 121.7, win: true, legs_played: 12, legs_won: 9, earnings: 5.0, rank: 2, $180s: 0},
+    {player: "Simon Lieske", duli: 131.7, win: false, legs_played: 12, legs_won: 5, earnings: 0.0, rank: 3, $180s: 0},
+    {player: "Jan Hübner", duli: 173.3, win: false, legs_played: 12, legs_won: 4, earnings: 0.0, rank: 4, $180s: 0},
+    {player: "Lucas Huber", duli: 103.3, win: false, legs_played: 12, legs_won: 4, earnings: 0.0, rank: 4, $180s: 0},
+];
 //const _tt2 = [ ... ];
 const _tournaments = [
     _tt1,
+    _tt2,
     //_tt2 ...
 ];
 let nextAppointment = new Date("Jun 12, 2022 16:00:00").getTime();
@@ -175,9 +185,9 @@ function calculateDULI() {
             for (k = 0; k < _tournaments[j].length; k++) {
                 if (players[i].name === _tournaments[j][k].player) {
                     if (players[i].duli < 1.0) {
-                        players[i].duli = _tournaments[j][k].duli;
+                        players[i].duli = _tournaments[j][k].duli.toFixed(1);
                     } else {
-                        players[i].duli = (players[i].duli * 0.4) + (_tournaments[j][k].duli * 0.6);
+                        players[i].duli = ((players[i].duli * 0.4) + (_tournaments[j][k].duli * 0.6)).toFixed(1);
                     }
                 }
             }
@@ -262,14 +272,14 @@ duliCollapsible.addEventListener("click", function() {
 tournamentsCollapsible.addEventListener("click", function() {
     if (!tournamentsCollapsible.classList.contains("active)")) {
         players.sort((a, b) => b.duli - a.duli);
-        players.sort((a, b) => b.tournaments_won - a.tournaments_won);
+        players.sort((a, b) => b.tournaments_won / b.tournaments - a.tournaments_won / a.tournaments);
         document.getElementById('stats-tournaments').innerHTML = "";
         let i;
         for (i = 0; i < players.length; i++) {
             if (i !== 0 && i % 4 === 0) {
                 document.getElementById('stats-tournaments').innerHTML += "<hr>";
             }
-            document.getElementById('stats-tournaments').innerHTML += "<b>" + (i + 1) + ". </b>" + players[i].name + "<span class='span-rank'>(" + players[i].tournaments_won + "/" + players[i].tournaments + ")</span></br>";
+            document.getElementById('stats-tournaments').innerHTML += "<b>" + (i + 1) + ". </b>" + players[i].name + "<span class='span-rank'>" + (players[i].tournaments_won / players[i].tournaments * 100).toFixed(1) + "% - (" + players[i].tournaments_won + "/" + players[i].tournaments + ")</span></br>";
         }
     }
 });
@@ -277,14 +287,14 @@ tournamentsCollapsible.addEventListener("click", function() {
 legsCollapsible.addEventListener("click", function() {
     if (!legsCollapsible.classList.contains("active)")) {
         players.sort((a, b) => b.duli - a.duli);
-        players.sort((a, b) => b.legs_won - a.legs_won);
+        players.sort((a, b) => b.legs_won / b.legs - a.legs_won / a.legs);
         document.getElementById('stats-legs').innerHTML = "";
         let i;
         for (i = 0; i < players.length; i++) {
             if (i !== 0 && i % 4 === 0) {
                 document.getElementById('stats-legs').innerHTML += "<hr>";
             }
-            document.getElementById('stats-legs').innerHTML += "<b>" + (i + 1) + ". </b>" + players[i].name + "<span class='span-rank'>(" + players[i].legs_won + "/" + players[i].legs + ")</span></br>";
+            document.getElementById('stats-legs').innerHTML += "<b>" + (i + 1) + ". </b>" + players[i].name + "<span class='span-rank'>" + (players[i].legs_won / players[i].legs * 100).toFixed(1) + "% - (" + players[i].legs_won + "/" + players[i].legs + ")</span></br>";
         }
     }
 });
