@@ -51,7 +51,7 @@ const _tournaments = [
     _tt2,
     //_tt2 ...
 ];
-let nextAppointment = new Date("Jun 12, 2022 16:00:00").getTime();
+let nextAppointment = new Date("Dec 11, 2022 16:00:00").getTime();
 
 calculatePlayerData();
 
