@@ -45,10 +45,21 @@ const _tt2 = [
     {player: "Jan Hübner", duli: 173.3, win: false, legs_played: 12, legs_won: 4, earnings: 0.0, rank: 4, $180s: 0},
     {player: "Lucas Huber", duli: 103.3, win: false, legs_played: 12, legs_won: 4, earnings: 0.0, rank: 4, $180s: 0},
 ];
+const _tt3 = [
+    {player: "Jonas Dunker", duli: 156.7, win: false, legs_played: 12, legs_won: 4, earnings: 0.0, rank: 4, $180s: 1},
+    {player: "Simon Heß", duli: 196.9, win: true, legs_played: 13, legs_won: 8, earnings: 10.0, rank: 1, $180s: 0},
+    {player: "Daniel Lieske", duli: 118.5, win: true, legs_played: 13, legs_won: 8, earnings: 10.0, rank: 1, $180s: 0},
+    {player: "Sebastian Bolz", duli: 96.67, win: false, legs_played: 12, legs_won: 7, earnings: 0.0, rank: 3, $180s: 0},
+    {player: "Kai Köhler", duli: 170.8, win: false, legs_played: 13, legs_won: 6, earnings: 5.0, rank: 2, $180s: 1},
+    {player: "Luca Schenkel", duli: 146.7, win: false, legs_played: 12, legs_won: 4, earnings: 0.0, rank: 4, $180s: 0},
+    {player: "Jan Hübner", duli: 186.7, win: false, legs_played: 12, legs_won: 7, earnings: 0.0, rank: 3, $180s: 0},
+    {player: "Lucas Huber", duli: 118.5, win: false, legs_played: 13, legs_won: 6, earnings: 5.0, rank: 2, $180s: 0},
+];
 //const _tt2 = [ ... ];
 const _tournaments = [
     _tt1,
     _tt2,
+    _tt3
     //_tt2 ...
 ];
 let nextAppointment = new Date("Dec 11, 2022 16:00:00").getTime();
