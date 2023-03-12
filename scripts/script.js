@@ -17,7 +17,7 @@ let pointsCollapsible = document.getElementById('stats-points-collapsible');
 let $180sCollapsible = document.getElementById('stats-180-collapsible');
 const _points = [-5000, 5, 3, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 let players = [
-    {name: "JD-9000", duli: 0.0, tournaments: 0, tournaments_won: 0, legs: 0, legs_won: 0, earnings: 0.0, points: 0, $180s: 0},
+    {name: "The Joker", duli: 0.0, tournaments: 0, tournaments_won: 0, legs: 0, legs_won: 0, earnings: 0.0, points: 0, $180s: 0},
     {name: "The No-Heßitation Master", duli: 0.0, tournaments: 0, tournaments_won: 0, legs: 0, legs_won: 0, earnings: 0.0, points: 0, $180s: 0},
     {name: "Libra Dan", duli: 0.0, tournaments: 0, tournaments_won: 0, legs: 0, legs_won: 0, earnings: 0.0, points: 0, $180s: 0},
     {name: "Journeyman Seb", duli: 0.0, tournaments: 0, tournaments_won: 0, legs: 0, legs_won: 0, earnings: 0.0, points: 0, $180s: 0},
@@ -28,7 +28,7 @@ let players = [
     {name: "Smoking Simon", duli: 0.0, tournaments: 0, tournaments_won: 0, legs: 0, legs_won: 0, earnings: 0.0, points: 0, $180s: 0},
 ];
 const _tt1 = [
-    {player: "JD-9000", duli: 94.29, win: false, legs_played: 10, legs_won: 7, earnings: 5.0, rank: 2, $180s: 0},
+    {player: "The Joker", duli: 94.29, win: false, legs_played: 10, legs_won: 7, earnings: 5.0, rank: 2, $180s: 0},
     {player: "The No-Heßitation Master", duli: 168.6, win: false, legs_played: 10, legs_won: 7, earnings: 5.0, rank: 2, $180s: 0},
     {player: "Libra Dan", duli: 137.1, win: false, legs_played: 10, legs_won: 3, earnings: 0.0, rank: 4, $180s: 0},
     {player: "Journeyman Seb", duli: 68.57, win: false, legs_played: 10, legs_won: 3, earnings: 0.0, rank: 4, $180s: 0},
@@ -38,7 +38,7 @@ const _tt1 = [
     {player: "The Huber Trooper", duli: 97.14, win: false, legs_played: 10, legs_won: 3, earnings: 0.0, rank: 3, $180s: 0},
 ];
 const _tt2 = [
-    {player: "JD-9000", duli: 120.0, win: false, legs_played: 12, legs_won: 5, earnings: 0.0, rank: 3, $180s: 0},
+    {player: "The Joker", duli: 120.0, win: false, legs_played: 12, legs_won: 5, earnings: 0.0, rank: 3, $180s: 0},
     {player: "The No-Heßitation Master", duli: 200.0, win: true, legs_played: 12, legs_won: 9, earnings: 5.0, rank: 2, $180s: 0},
     {player: "Libra Dan", duli: 121.7, win: true, legs_played: 12, legs_won: 9, earnings: 5.0, rank: 2, $180s: 0},
     {player: "Smoking Simon", duli: 131.7, win: false, legs_played: 12, legs_won: 5, earnings: 0.0, rank: 3, $180s: 0},
@@ -46,7 +46,7 @@ const _tt2 = [
     {player: "The Huber Trooper", duli: 103.3, win: false, legs_played: 12, legs_won: 4, earnings: 0.0, rank: 4, $180s: 0},
 ];
 const _tt3 = [
-    {player: "JD-9000", duli: 156.7, win: false, legs_played: 12, legs_won: 4, earnings: 0.0, rank: 4, $180s: 1},
+    {player: "The Joker", duli: 156.7, win: false, legs_played: 12, legs_won: 4, earnings: 0.0, rank: 4, $180s: 1},
     {player: "The No-Heßitation Master", duli: 196.9, win: true, legs_played: 13, legs_won: 8, earnings: 10.0, rank: 1, $180s: 0},
     {player: "Libra Dan", duli: 118.5, win: true, legs_played: 13, legs_won: 8, earnings: 10.0, rank: 1, $180s: 0},
     {player: "Journeyman Seb", duli: 96.67, win: false, legs_played: 12, legs_won: 7, earnings: 0.0, rank: 3, $180s: 0},
