@@ -64,7 +64,7 @@ const _tt4 = [
     {player: "Jan Hypener", duli: 128.6, win: false, legs_played: 14, legs_won: 8, earnings: 0.0, rank: 3, $180s: 0},
     {player: "The Huber Trooper", duli: 92.63, win: true, legs_played: 19, legs_won: 10, earnings: 10.0, rank: 2, $180s: 0},
 ];
-const _tt3 = [
+const _tt5 = [
     {player: "The Joker", duli: 138.6, win: true, legs_played: 14, legs_won: 12, earnings: 10.0, rank: 1, $180s: 0},
     {player: "The No-Heßitation Master", duli: 156, win: false, legs_played: 15, legs_won: 8, earnings: 5.0, rank: 2, $180s: 0},
     {player: "Libra Dan", duli: 102.7, win: false, legs_played: 15, legs_won: 8, earnings: 5.0, rank: 2, $180s: 0},
