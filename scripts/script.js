@@ -26,6 +26,7 @@ let players = [
     {name: "Jan Hypener", duli: 0.0, tournaments: 0, tournaments_won: 0, legs: 0, legs_won: 0, earnings: 0.0, points: 0, $180s: 0},
     {name: "The Huber Trooper", duli: 0.0, tournaments: 0, tournaments_won: 0, legs: 0, legs_won: 0, earnings: 0.0, points: 0, $180s: 0},
     {name: "Smoking Simon", duli: 0.0, tournaments: 0, tournaments_won: 0, legs: 0, legs_won: 0, earnings: 0.0, points: 0, $180s: 0},
+    {name: "Steffen-Swaan", duli: 0.0, tournaments: 0, tournaments_won: 0, legs: 0, legs_won: 0, earnings: 0.0, points: 0, $180s: 0},
 ];
 const _tt1 = [
     {player: "The Joker", duli: 94.29, win: false, legs_played: 10, legs_won: 7, earnings: 5.0, rank: 2, $180s: 0},
@@ -63,12 +64,23 @@ const _tt4 = [
     {player: "Jan Hypener", duli: 128.6, win: false, legs_played: 14, legs_won: 8, earnings: 0.0, rank: 3, $180s: 0},
     {player: "The Huber Trooper", duli: 92.63, win: true, legs_played: 19, legs_won: 10, earnings: 10.0, rank: 2, $180s: 0},
 ];
+const _tt3 = [
+    {player: "The Joker", duli: 138.6, win: true, legs_played: 14, legs_won: 12, earnings: 10.0, rank: 1, $180s: 0},
+    {player: "The No-Heßitation Master", duli: 156, win: false, legs_played: 15, legs_won: 8, earnings: 5.0, rank: 2, $180s: 0},
+    {player: "Libra Dan", duli: 102.7, win: false, legs_played: 15, legs_won: 8, earnings: 5.0, rank: 2, $180s: 0},
+    {player: "Journeyman Seb", duli: 88.0, win: false, legs_played: 15, legs_won: 3, earnings: 0.0, rank: 4, $180s: 0},
+    {player: "Kai The King", duli: 210.0, win: true, legs_played: 14, legs_won: 12, earnings: 10.0, rank: 1, $180s: 0},
+    {player: "Smoking Simon", duli: 122.5, win: false, legs_played: 16, legs_won: 7, earnings: 0.0, rank: 3, $180s: 0},
+    {player: "Jan Hypener", duli: 194.7, win: false, legs_played: 15, legs_won: 3, earnings: 0.0, rank: 4, $180s: 0},
+    {player: "Steffen-Swaan", duli: 160.0, win: false, legs_played: 16, legs_won: 7, earnings: 0.0, rank: 3, $180s: 0},
+];
 //const _tt2 = [ ... ];
 const _tournaments = [
     _tt1,
     _tt2,
     _tt3,
-    _tt4
+    _tt4,
+    _tt5
     //_tt2 ...
 ];
 let nextAppointment = new Date("Dec 11, 2022 16:00:00").getTime();
