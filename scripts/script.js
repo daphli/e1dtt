@@ -84,6 +84,14 @@ const _tt6 = [
     {player: "Jan Hypener", duli: 125.0, win: false, legs_played: 12, legs_won: 5, earnings: 0.0, rank: 4, $180s: 0},
     {player: "Steffen-Swaan", duli: 194.3, win: false, legs_played: 14, legs_won: 8, earnings: 5.0, rank: 2, $180s: 0},
 ];
+const _tt7 = [
+    {player: "The Joker", duli: 122.9, win: false, legs_played: 14, legs_won: 4, earnings: 5.0, rank: 3, $180s: 0},
+    {player: "The No-Heßitation Master", duli: 225.5, win: false, legs_played: 11, legs_won: 4, earnings: 0.0, rank: 4, $180s: 0},
+    {player: "Libra Dan", duli: 140.0, win: true, legs_played: 13, legs_won: 11, earnings: 10.0, rank: 2, $180s: 0},
+    {player: "Kai The King", duli: 141.4, win: false, legs_played: 14, legs_won: 4, earnings: 5.0, rank: 3, $180s: 0},
+    {player: "Jan Hypener", duli: 132.7, win: false, legs_played: 11, legs_won: 4, earnings: 0.0, rank: 4, $180s: 0},
+    {player: "Steffen-Swaan", duli: 158.5, win: true, legs_played: 13, legs_won: 11, earnings: 10.0, rank: 2, $180s: 0},
+]
 //const _tt2 = [ ... ];
 const _tournaments = [
     _tt1,
@@ -91,7 +99,8 @@ const _tournaments = [
     _tt3,
     _tt4,
     _tt5,
-    _tt6
+    _tt6,
+    _tt7
     //_tt2 ...
 ];
 let nextAppointment = new Date("Dec 11, 2022 16:00:00").getTime();
